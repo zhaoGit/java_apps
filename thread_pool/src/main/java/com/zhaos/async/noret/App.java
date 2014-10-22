@@ -1,6 +1,7 @@
-package com.zhaos.async;
+package com.zhaos.async.noret;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /*
@@ -11,10 +12,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 
 	public static void main(String[] args) {
-		ApplicationContext aContext = new ClassPathXmlApplicationContext("com/zhaos/async/applicationContext.xml");
+		ApplicationContext aContext = new ClassPathXmlApplicationContext("com/zhaos/async/noret/applicationContext.xml");
 		IGreeting greeting = aContext.getBean("greeting", IGreeting.class);
 		greeting.sayHello();
 		System.out.println("end");
+		((AbstractApplicationContext) aContext).close();
 	}
 
 }

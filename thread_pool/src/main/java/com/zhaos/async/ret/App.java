@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
 	public static void main(String[] args){
-		ApplicationContext aContext = new ClassPathXmlApplicationContext("com/zhaos/async/applicationContext.xml");
+		ApplicationContext aContext = new ClassPathXmlApplicationContext("com/zhaos/async/ret/applicationContext.xml");
 		ICalc calc = aContext.getBean("calcImpl", ICalc.class);
 		Future<Integer> result = calc.calc(2, 3);
 		try {

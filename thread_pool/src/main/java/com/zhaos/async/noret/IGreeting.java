@@ -1,4 +1,4 @@
-package com.zhaos.async;
+package com.zhaos.async.noret;
 
 import org.springframework.scheduling.annotation.Async;
 

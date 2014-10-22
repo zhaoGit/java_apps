@@ -15,7 +15,7 @@
 			http://www.springframework.org/schema/task/spring-task-3.0.xsd
 			">
 			
-		<context:component-scan base-package="com.zhaos.async"></context:component-scan>
+		<context:component-scan base-package="com.zhaos.async.noret"></context:component-scan>
 		   <!-- 支持异步方法执行 -->
     <task:annotation-driven /> 
 </beans>
