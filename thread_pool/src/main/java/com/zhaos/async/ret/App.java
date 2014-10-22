@@ -4,6 +4,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
@@ -20,6 +21,7 @@ public class App {
 		}
 		
 		System.out.println("end");
+		((AbstractApplicationContext) aContext).close();
 	}
 
 }
