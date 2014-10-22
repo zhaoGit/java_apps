@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:websocket="http://www.springframework.org/schema/websocket"
+		xmlns:context="http://www.springframework.org/schema/context"	
+		xmlns:task="http://www.springframework.org/schema/task"	
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/websocket
+			http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-4.0.xsd
+			http://www.springframework.org/schema/task 
+			http://www.springframework.org/schema/task/spring-task-3.0.xsd
+			">
+			
+	<context:component-scan base-package="com.zhaos.async.threadpool"></context:component-scan>
+		   <!-- 支持异步方法执行 -->
+    <task:annotation-driven /> 
+    
+    	<!-- 线程池的定义
+1.在XML中定义bean的init-method与destroy-method属性   执行init与destroy方法非强制，在xml中自由配置，与Spring框架依赖度低
+2.使Bean实现初始化与销毁操作接口InitializingBean与DisposableBean，
+3. 配置中对bean定义增加scope="prototype" 即不使用单例模式创建bean，destroy方法不会被执行。
+    	 -->
+	<bean id="fooExecutor" class="com.zhaos.async.threadpool.FooThreadPool" init-method="init" destroy-method="destroy">
+		<property name="threadPoolName" value="foo-thread-4-test"></property>
+		<property name="corePoolSize" value="20" />
+		<property name="maxPoolSize" value="100" />
+		<property name="queueCapacity" value="50" />
+		<property name="keepAliveSeconds" value="2000" />
+		<property name="allowCoreThreadTimeOut" value="false" />
+		<property name="rejectedExecutionHandler">
+			<bean class="java.util.concurrent.ThreadPoolExecutor$DiscardPolicy" />
+		</property>
+	</bean>
+</beans>
