@@ -1,6 +1,7 @@
 package EnumInjection;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
@@ -8,6 +9,7 @@ public class App {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("EnumInjection/applicationContext.xml");
 		PersonService personService = applicationContext.getBean("personService", PersonService.class);
 		personService.foo();
+		((AbstractApplicationContext) applicationContext).close();
 	}
 
 }

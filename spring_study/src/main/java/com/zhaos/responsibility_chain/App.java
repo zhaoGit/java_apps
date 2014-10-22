@@ -1,6 +1,7 @@
 package com.zhaos.responsibility_chain;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
@@ -9,6 +10,7 @@ public class App {
 		ApplicationContext aContext = new ClassPathXmlApplicationContext("com/zhaos/responsibility_chain/applicationContext.xml");
 		Service service = aContext.getBean("service", Service.class);
 		service.sayWords();
+		((AbstractApplicationContext) aContext).close();
 	}
 }
 	
