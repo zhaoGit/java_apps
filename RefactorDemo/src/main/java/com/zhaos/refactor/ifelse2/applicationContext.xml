@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation=
+			"http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+		
+	
+	<bean id="simulatePlanGenerator" class="com.zhaos.refactor.ifelse2.SimulatePlanGenerator">
+		<property name="performer" ref="asmCNLPerformer">
+		</property>
+	</bean>
+	<bean id="asmCNLPerformer" class="com.zhaos.refactor.ifelse2.AsmCNLPerformer">
+		<property name="performer" ref="ssmCNLPerformer">
+		</property>
+	</bean>
+	<bean id="ssmCNLPerformer" class="com.zhaos.refactor.ifelse2.SsmCNLPerformer">
+		<property name="performer" ref="eQTPerformer">
+		</property>
+	</bean>
+	<bean id="eQTPerformer" class="com.zhaos.refactor.ifelse2.EQTPerformer">
+		<property name="performer" ref="tIMPerformer">
+		</property>
+	</bean>
+	<bean id="tIMPerformer" class="com.zhaos.refactor.ifelse2.TIMPerformer">
+	</bean>
+</beans>
