@@ -7,11 +7,11 @@ public class Greeting implements IGreeting {
 
 	public void sayHello() {
 		try {
-			Thread.sleep(10000);
-		} catch (InterruptedException e) {
+			Thread.sleep(100);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(Thread.currentThread().getName() + " hello async...");
+		System.out.println(Thread.currentThread().getName() + " ****************hello async...");
 	}
 
 }
