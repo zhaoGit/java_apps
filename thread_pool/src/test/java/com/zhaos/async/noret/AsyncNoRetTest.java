@@ -18,21 +18,12 @@ public class AsyncNoRetTest {
 
 	@Test
 	public void test() throws Exception {
-		TestRunnable runner = new TestRunnable() {
-			@Override
-			public void runTest() throws Throwable {
-				greeting.sayHello();
-				System.out.println(Thread.currentThread().getName()+"****");
-			}
-		};
-		MultiThreadedTestRunner mttr = new MultiThreadedTestRunner(
-				new TestRunnable[] { runner });
-		try {
-			mttr.runTestRunnables();
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
-		System.out.println(Thread.currentThread().getName() + " end");
-		Thread.currentThread().sleep(10000);
+		/*
+		 * Junit单元测试不支持并发，Junit本身是不支持普通的多线程测试的，这是因为Junit的底层实现上，
+		 * 是用System.exit退出用例执行的。JVM都终止了，在测试线程启动的其他线程自然也无法执行。
+		 */
+		greeting.sayHello();
+		Thread.sleep(1000);
+		System.out.println("end");
 	}
 }

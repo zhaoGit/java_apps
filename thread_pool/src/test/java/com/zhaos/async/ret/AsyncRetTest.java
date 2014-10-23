@@ -19,10 +19,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class AsyncRetTest {
 
 	@Autowired
-	private ICalc calc;
-	
+	private ICalc calc;	
 	
 	private int THREAD_NUMS = 5;
+	
 	@Test
 	public void test() {
 /*		Future<Integer> result = calc.calc(2, 3);
