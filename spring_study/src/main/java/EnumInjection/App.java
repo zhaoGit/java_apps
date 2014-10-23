@@ -11,5 +11,4 @@ public class App {
 		personService.foo();
 		((AbstractApplicationContext) applicationContext).close();
 	}
-
 }
