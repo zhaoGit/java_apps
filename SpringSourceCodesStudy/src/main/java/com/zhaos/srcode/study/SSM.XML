@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CfdFlight action="CNL" docType="ASM" FLTCNL="true">
+	<Flight>
+		<Designator airline="CA" number="4112" />
+		<DateRange start="09/20/2014" />
+	</Flight>
+</CfdFlight>
