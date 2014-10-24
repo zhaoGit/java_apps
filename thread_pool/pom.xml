@@ -35,7 +35,6 @@
       <groupId>net.sourceforge.groboutils</groupId> 
       <artifactId>groboutils-core</artifactId> 
       <version>5</version> 
-    </dependency> 
-	 
+    </dependency> 	 
   </dependencies>
 </project>
