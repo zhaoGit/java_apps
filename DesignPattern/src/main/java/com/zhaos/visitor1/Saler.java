@@ -22,7 +22,5 @@ public class Saler extends Visitor{
 		}else{
 			System.out.println("errro product");
 		}
-		
 	}
-
 }
