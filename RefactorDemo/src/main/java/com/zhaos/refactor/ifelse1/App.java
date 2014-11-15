@@ -13,7 +13,7 @@ public class App
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("com/zhaos/refactor/ifelse1/applicationContext.xml");
         SimulatePlanGenerator simulatePlanGenerator = applicationContext.getBean("simulatePlanGenerator", SimulatePlanGenerator.class);
         Event event = new Event();
-        event.setChangeType("TIM");
+        event.setChangeType(null);
         event.setAsm(true);
 		simulatePlanGenerator.generate(event );
     }
