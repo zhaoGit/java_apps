@@ -20,7 +20,6 @@ public class ToolSpring implements ApplicationContextAware {
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext)
 			throws BeansException {
-
 		if(ToolSpring.applicationContext == null){
 			ToolSpring.applicationContext = applicationContext;
 		}

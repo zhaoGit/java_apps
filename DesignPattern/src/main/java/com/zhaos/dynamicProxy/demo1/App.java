@@ -14,12 +14,10 @@ interface IAdvice{
 }
 
 class ConcreteSubject implements ISubject {
-
 	@Override
 	public void Request() {
 		System.out.println("ConcreteSubject:Request");
 	}
-
 }
 
 class DynProxyManagerBase implements InvocationHandler{
@@ -34,10 +32,12 @@ class DynProxyManagerBase implements InvocationHandler{
 	
 	//正如名字一样：invocation，handler，一旦有函数调用发生，则该处理方式会立即响应
 	//动态代理类的实例的所有方法调用都会转为调用该方法
-	//s.Request()执行时，s去初始化args0,Request会被封装成Method，参数会初始化arg2
+	//s.Request()执行时，s去初始化args0, s是jdk生成的动态代理类,
+	//Request会被封装成Method，参数会初始化arg2
 	@Override
 	public Object invoke(Object arg0, Method arg1, Object[] arg2)
 			throws Throwable {
+		System.out.println(arg2);
 		if(advice != null){
 			advice.preInvoke();	
 		}
@@ -64,7 +64,6 @@ class Advice implements IAdvice{
 		// TODO Auto-generated method stub
 		System.out.println("end");
 	}
-
 }
 
 
