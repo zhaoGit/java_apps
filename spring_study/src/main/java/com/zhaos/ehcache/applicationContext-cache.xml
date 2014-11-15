@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/task  
+		http://www.springframework.org/schema/task/spring-task-3.1.xsd"
+	default-lazy-init="false">
+
+	<context:component-scan base-package="com.zhaos.ehcache"></context:component-scan>
+	<!-- ************************************************************** -->
+	<!-- React的缓存采取ehcache，为了简化操作，本文中对Cache封装了一层，于是便有了ReactCache类。 -->
+	<!-- 【注意】React工程中的Cache一律采取在本文件中使用xml配置的方式，在Bean容器中实例化。以便实现 -->
+	<!-- *************************************************************** -->
+
+
+	<!-- cacheManager for EhCache -->
+	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation" value="classpath:com/zhaos/ehcache/ehcache.xml" />
+	</bean>
+	<!-- cacheFactory for EhCache -->
+	<bean id="cacheFactory" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+	</bean>
+
+	<!-- **************************************定义使用的Cache*************************************************** -->
+	<!-- 自行定义生成的Cache对象。需要注意以下两点： -->
+	<!-- 1、如果配置的cacheName为react.ehcache.xml中没有的名称，则将会仿照defaultCache自动生成一个新的cache。 -->
+	<!-- 2、如果配置的cacheName为react.ehcache.xml中已经配置过的名称，则将会直接获取已经存在的Cache。 -->
+	<!-- cacheName的使用，需要开发人员自行协调，不要乱用，混用。不要随意使用别人的cache。协调好本配置文件和ehcache配置文件之间的关系。cache的实例化和配置，完全放在配置文件中。 -->
+	<!-- ******************************************************************************************************* -->
+
+	<!-- 配置存储可利用航班的cache -->
+	<bean id="testCache" class="com.zhaos.ehcache.MyCache" init-method="init">
+		<property name="cacheName" value="availableSegmentCache" />
+	</bean>
+</beans>
