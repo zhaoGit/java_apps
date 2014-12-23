@@ -1,8 +1,5 @@
 package com.zhaos.async.ret;
 
-import static org.junit.Assert.*;
-
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 import net.sourceforge.groboutils.junit.v1.MultiThreadedTestRunner;

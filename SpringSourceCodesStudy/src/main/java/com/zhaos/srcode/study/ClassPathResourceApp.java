@@ -1,7 +1,6 @@
 package com.zhaos.srcode.study;
 
 import java.io.File;
-import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.springframework.core.io.ClassPathResource;
@@ -56,7 +55,7 @@ public class ClassPathResourceApp {
 		ClassPathResource classPathResource = new ClassPathResource(path);
 		String string = null;
 		try {
-//			string = FileUtils.readFileToString(classPathResource.getFile());
+			string = FileUtils.readFileToString(classPathResource.getFile());
 			new FileTest().print();
 		} catch (Exception e) {
 			e.printStackTrace();
