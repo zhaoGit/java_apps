@@ -1,7 +1,7 @@
 package com.zhaos.communication;
 
 /*
- * ����̹߳��������--��Դ��
+ * 多个线程共享的数据--资源类
  */
 class Resource {
 	private String name;

@@ -1,4 +1,4 @@
-package com.zhaos.innerclass;
+package com.zhaos.innerclass2;
 
 public class Square implements Shape {
 
@@ -19,7 +19,7 @@ public class Square implements Shape {
 	}
 
 	static {
-		ShapeFactory.addFactory("com.zhaos.innerclass.Square", new Factory());
+		ShapeFactory.addFactory(TypeEnum.SQUARE, new Factory());
 	}
 
 }

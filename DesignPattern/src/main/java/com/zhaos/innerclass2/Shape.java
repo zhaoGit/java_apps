@@ -1,4 +1,4 @@
-package com.zhaos.innerclass;
+package com.zhaos.innerclass2;
 
 public interface Shape {
 	public void draw();
