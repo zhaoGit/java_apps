@@ -18,5 +18,4 @@ public class App {
 		System.out.println("end");
 		((AbstractApplicationContext) aContext).close();
 	}
-
 }
