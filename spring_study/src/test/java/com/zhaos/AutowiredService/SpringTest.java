@@ -12,6 +12,7 @@ public class SpringTest {
 
 	@Autowired
 	private IGreetingService greetingService;
+	
 	@Test
 	public void test(){
 		greetingService.sayGreeting();
