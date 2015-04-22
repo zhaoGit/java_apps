@@ -8,13 +8,13 @@ public abstract class EventGeneratorBase implements EventGenerator{
 
 	@Override
 	public List<Event> buildEventList(FlightMessage flightMessage) {
-		initialParas();
-		return buildEventList(flightMessage.getMsg());
+		EventParas paras = configParas();
+		return buildEventList(flightMessage.getMsg(), paras);
 	}
 	
-	protected abstract List<Event> buildEventList(String messageStr);
+	protected abstract List<Event> buildEventList(String messageStr, EventParas paras);
 	
-	protected abstract void initialParas();
+	protected abstract EventParas configParas();
 	
 	@PostConstruct
 	protected abstract void registerGenerator();

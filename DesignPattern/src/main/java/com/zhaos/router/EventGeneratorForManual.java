@@ -1,5 +1,6 @@
 package com.zhaos.router;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -8,14 +9,14 @@ import org.springframework.stereotype.Service;
 public class EventGeneratorForManual extends EventGeneratorBase{
 
 	@Override
-	public List<Event> buildEventList(String messageStr) {
-		System.out.println(MessageType.GUI +" " +EventParas.DATE_PATTERN + " GUI");
-		return null;
+	public List<Event> buildEventList(String messageStr, EventParas paras) {
+		System.out.println(MessageType.GUI +" " + paras + " GUI");
+		return Collections.emptyList();
 	}
 
 	@Override
-	protected void initialParas() {
-		EventParas.DATE_PATTERN = "yyyy-MM-dd";
+	protected EventParas configParas() {
+		return new EventParas("yyyy-MM-dd");
 	}
 
 	@Override

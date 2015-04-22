@@ -1,7 +1,8 @@
 package com.zhaos.router;
 
 public class FlightMessage {
-	MessageType msgType;
+	private MessageType msgType;
+	private String msg;
 	public MessageType getMsgType() {
 		return msgType;
 	}
@@ -14,5 +15,5 @@ public class FlightMessage {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-	String msg;
+
 }
