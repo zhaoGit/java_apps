@@ -21,5 +21,4 @@ public class Circle implements Shape {
 	static {
 		ShapeFactory.addFactory(TypeEnum.CIRCLE, new Factory());
 	}
-
 }

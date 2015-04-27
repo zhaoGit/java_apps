@@ -20,13 +20,6 @@ public abstract class ShapeFactory {
 	}
 
 	public static final Shape createShape(TypeEnum typeEnum) {
-//		if (!factories.containsKey(id)) {
-//			try {
-//				Class.forName(id);
-//			} catch (ClassNotFoundException e) {
-//				throw new RuntimeException("Bad shape creation : " + id);
-//			}
-//		}
 		return factories.get(typeEnum).create();
 	}
 }
