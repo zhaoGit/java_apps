@@ -1,6 +1,6 @@
 package com.zhaos.builder;
 /**
- * 常用的Build模式
+ * 常用的Build
  */
 import com.zhaos.strEqual.Designator;
 

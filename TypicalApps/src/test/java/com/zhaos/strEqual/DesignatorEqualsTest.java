@@ -101,6 +101,26 @@ public class DesignatorEqualsTest {
 		assertFalse(designator1.equals(null));
 	}
 	
+	@Test
+	public void testRegexp(){
+		String regexp = "[A-Z]{2}[0-9]{1,6}[A-Z]?";
+		String flightCode = "CA1223";
+		assertTrue(flightCode.matches(regexp));
+	}
+	
+	@Test
+	public void testToDesignatorStr(){
+		String flightCode = "CA1203A";
+		Designator designator = new Designator(flightCode);
+		assertEquals(flightCode, designator.getDesignatorStr());
+	}
+	
+	@Test
+	public void test_CA1203_ToDesignatorStr(){
+		String flightCode = "CA1203";
+		Designator designator = new Designator(flightCode);
+		assertEquals(flightCode, designator.getDesignatorStr());
+	}
 	
 	private Designator buildDesignator(String airline, String number, String suffix){
 		return DesignatorBuilder
@@ -110,5 +130,4 @@ public class DesignatorEqualsTest {
 				.withSuffix(suffix)
 				.build();
 	}
-
 }
