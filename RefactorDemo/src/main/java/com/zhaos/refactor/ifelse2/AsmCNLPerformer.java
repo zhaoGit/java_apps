@@ -13,7 +13,6 @@ public class AsmCNLPerformer extends Performer{
 		}
 		super.perform(event);
 	}
-
 	@Override
 	protected void excute(Event event){
 		System.out.println("ASM CNL excute succesfully");
