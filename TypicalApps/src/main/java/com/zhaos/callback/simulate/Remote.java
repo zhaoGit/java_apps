@@ -23,6 +23,5 @@ public class Remote {
 		System.out.println("I hava executed the message by Local");
 		/**执行回调**/
 		callBack.execute("Nice to meet you~!");
-	}
-	
+	}	
 }
