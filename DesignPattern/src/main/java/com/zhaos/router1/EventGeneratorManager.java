@@ -1,7 +1,7 @@
 package com.zhaos.router1;
 
 import java.util.List;
-
+//Singleton Pattern
 public final class EventGeneratorManager implements EventGenerator{
 	
 	private static final EventGenerator instance = new EventGeneratorManager();

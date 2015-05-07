@@ -2,6 +2,7 @@ package com.zhaos.router1;
 
 public class EventParas {
 	private String datePattern ;
+	
 	public EventParas(String datePattern) {
 		this.setDatePattern(datePattern);
 	}

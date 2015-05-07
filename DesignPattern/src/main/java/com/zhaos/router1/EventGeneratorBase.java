@@ -9,7 +9,8 @@ public abstract class EventGeneratorBase{
 		return buildEventList(flightMessage.getMsg(), paras);
 	}
 	
+	//Hook method (to be extended)
 	protected abstract List<Event> buildEventList(String messageStr, EventParas paras);
-	
+	//Hook method(to be extended)
 	protected abstract EventParas configParas();
 }
