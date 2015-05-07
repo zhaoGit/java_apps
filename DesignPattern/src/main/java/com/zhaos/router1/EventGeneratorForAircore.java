@@ -3,9 +3,7 @@ package com.zhaos.router1;
 import java.util.Collections;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
 
-@Service
 public class EventGeneratorForAircore extends EventGeneratorBase{
 	@Override
 	public List<Event> buildEventList(String messageStr, EventParas paras){

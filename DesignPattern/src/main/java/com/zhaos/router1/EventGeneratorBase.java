@@ -2,9 +2,9 @@ package com.zhaos.router1;
 
 import java.util.List;
 
-public abstract class EventGeneratorBase implements EventGenerator{
+//public abstract class EventGeneratorBase implements EventGenerator{
+public abstract class EventGeneratorBase{
 
-	@Override
 	public List<Event> buildEventList(FlightMessage flightMessage) {
 		EventParas paras = configParas();
 		return buildEventList(flightMessage.getMsg(), paras);

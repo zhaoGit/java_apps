@@ -2,10 +2,15 @@ package com.zhaos.router1;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
-@Service
-public class EventManagerImpl implements EventManager{
+public final class EventGeneratorManager implements EventGenerator{
+	
+	public static EventGenerator getEventGenerator(){
+		return new EventGeneratorManager();
+	}
+	
+	private EventGeneratorManager() {
+	}
+	
 	@Override
 	public List<Event> generateEventList(FlightMessage flightMessage){
 		EventGeneratorFactory eventGenerator = EventGeneratorFactoryHolder.getEventGenerator(flightMessage.getMsgType());

@@ -3,9 +3,6 @@ package com.zhaos.router1;
 import java.util.Collections;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
-@Service
 public class EventGeneratorForManual extends EventGeneratorBase{
 
 	@Override
