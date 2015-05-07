@@ -24,6 +24,6 @@ public class EventGeneratorForManual extends EventGeneratorBase{
 	}
 	
 	static{
-		EventGeneratorFactoryHolder.registerEventGenerator(MessageType.GUI, new Factory());
+		EventGeneratorHolder.registerEventGenerator(MessageType.GUI, new Factory().createEventGenerator());
 	}
 }

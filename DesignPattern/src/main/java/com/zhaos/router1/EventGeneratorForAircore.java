@@ -24,6 +24,6 @@ public class EventGeneratorForAircore extends EventGeneratorBase{
 	}
 	
 	static{
-		EventGeneratorFactoryHolder.registerEventGenerator(MessageType.FLT, new Factory());
+		EventGeneratorHolder.registerEventGenerator(MessageType.FLT, new Factory().createEventGenerator());
 	}
 }

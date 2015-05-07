@@ -13,7 +13,7 @@ public final class EventGeneratorManager implements EventGenerator{
 	
 	@Override
 	public List<Event> generateEventList(FlightMessage flightMessage){
-		EventGeneratorFactory eventGenerator = EventGeneratorFactoryHolder.getEventGenerator(flightMessage.getMsgType());
-		return eventGenerator.createEventGenerator().buildEventList(flightMessage);
+		EventGeneratorBase eventGenerator = EventGeneratorHolder.getEventGenerator(flightMessage.getMsgType());
+		return eventGenerator.buildEventList(flightMessage);
 	}
 }
