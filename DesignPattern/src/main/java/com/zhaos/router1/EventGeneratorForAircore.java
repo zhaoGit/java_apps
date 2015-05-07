@@ -18,7 +18,7 @@ public class EventGeneratorForAircore extends EventGeneratorBase{
 	
 	private static class Factory extends EventGeneratorFactory{
 		@Override
-		public EventGeneratorBase create() {
+		public EventGeneratorBase createEventGenerator() {
 			return new EventGeneratorForAircore();
 		}
 	}

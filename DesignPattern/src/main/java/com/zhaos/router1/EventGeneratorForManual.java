@@ -18,7 +18,7 @@ public class EventGeneratorForManual extends EventGeneratorBase{
 
 	private static class Factory extends EventGeneratorFactory{
 		@Override
-		public EventGeneratorBase create() {
+		public EventGeneratorBase createEventGenerator() {
 			return new EventGeneratorForManual();
 		}
 	}
