@@ -16,14 +16,9 @@ public class EventGeneratorForAircore extends EventGeneratorBase{
 		return new EventParas("MM/dd/yyyy");
 	}
 	
-	private static class Factory extends EventGeneratorFactory{
-		@Override
-		public EventGeneratorBase createEventGenerator() {
-			return new EventGeneratorForAircore();
-		}
-	}
-	
+	//当调用Class.forName()时，会调用此静态初始化模块
 	static{
-		EventGeneratorHolder.registerEventGenerator(MessageType.FLT, new Factory().createEventGenerator());
+		//每一个Event生成类负责把自己注册到统一管理的容器中
+		EventGeneratorHolder.registerEventGenerator(MessageType.FLT, new EventGeneratorForAircore());
 	}
 }

@@ -15,15 +15,8 @@ public class EventGeneratorForManual extends EventGeneratorBase{
 	protected EventParas configParas() {
 		return new EventParas("yyyy-MM-dd");
 	}
-
-	private static class Factory extends EventGeneratorFactory{
-		@Override
-		public EventGeneratorBase createEventGenerator() {
-			return new EventGeneratorForManual();
-		}
-	}
 	
 	static{
-		EventGeneratorHolder.registerEventGenerator(MessageType.GUI, new Factory().createEventGenerator());
+		EventGeneratorHolder.registerEventGenerator(MessageType.GUI, new EventGeneratorForManual());
 	}
 }
