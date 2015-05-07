@@ -4,8 +4,10 @@ import java.util.List;
 
 public final class EventGeneratorManager implements EventGenerator{
 	
+	private static final EventGenerator instance = new EventGeneratorManager();
+	
 	public static EventGenerator getEventGenerator(){
-		return new EventGeneratorManager();
+		return instance;
 	}
 	
 	private EventGeneratorManager() {
