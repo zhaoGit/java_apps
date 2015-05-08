@@ -1,6 +1,6 @@
 package com.zhaos.observer3;
 
-public abstract class PointerListenerImpl implements PointListener {
+public abstract class DefaultPointerListener implements PointListener {
 
 	@Override
 	public void onEvent(MoveEvent e) {	}

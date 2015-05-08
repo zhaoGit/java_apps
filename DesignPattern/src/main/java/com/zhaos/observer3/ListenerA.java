@@ -1,7 +1,7 @@
 package com.zhaos.observer3;
 
 
-public class ListenerA extends PointerListenerImpl {
+public class ListenerA extends DefaultPointerListener {
 
 	@Override
 	public void onEvent(MoveEvent e) {
@@ -14,6 +14,4 @@ public class ListenerA extends PointerListenerImpl {
 		super.onEvent(e);
 		System.out.println("listenerA "+ ((Point)e.getSource()).getX() + ", "+  ((Point)e.getSource()).getY());
 	}
-
-
 }
