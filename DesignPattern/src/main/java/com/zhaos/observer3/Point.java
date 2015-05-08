@@ -59,7 +59,8 @@ public class Point{
 	public void setY(int y) {
 		this.y = y;
 	}
-
+	
+	//触发MoveEvent事件
 	public void fireMoveEvent(int x, int y)	{
 		if (this.x != x || this.y != y)	{
 			int x0 = this.x; // 保存移动前的坐标到x0、y0
@@ -72,7 +73,7 @@ public class Point{
 		}
 	}
 
-
+	//触发FocusEvent事件
 	public void fireFocusEvent()	{
 		actionPerformed(new FocusEvent(this));
 	}

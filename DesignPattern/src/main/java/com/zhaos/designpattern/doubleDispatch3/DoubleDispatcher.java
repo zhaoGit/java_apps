@@ -45,10 +45,11 @@ public class DoubleDispatcher {
 		Father s2 = new Son2();
 
 		Execute exe = new Execute();
+
+		father.accept(exe);
 		/*
 		 * s1调用accept是第一次分派，会分派到Son1的accept方法；第二次分派是重载，会调用method(Son1)方法
 		 */
-		father.accept(exe);
 		s1.accept(exe);
 		s2.accept(exe);
 	}

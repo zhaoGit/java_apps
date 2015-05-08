@@ -5,9 +5,10 @@ import java.util.EventObject;
 public abstract class BaseEvent extends EventObject{
 
 	/**
-	 * 
+	 * Default ID
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	public BaseEvent(Object source) {
 		super(source);
 	}

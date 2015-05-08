@@ -1,6 +1,11 @@
 package com.zhaos.observer3;
 
-
+/**
+ * 事件对象
+ * 
+ * @author zhaosheng
+ *
+ */
 public class FocusEvent extends BaseEvent {
 
 	/**

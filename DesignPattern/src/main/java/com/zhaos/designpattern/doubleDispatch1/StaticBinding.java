@@ -30,7 +30,9 @@ public class StaticBinding {
 
 		Execute exe = new Execute();
 		exe.method(father);
+		//静态绑定，因为编译时按照s1是Father类型就确定了调用的方法
 		exe.method(s1);
+		//静态绑定
 		exe.method(s2);
 	}
 }
