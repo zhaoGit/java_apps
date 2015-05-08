@@ -1,6 +1,6 @@
 package com.zhaos.observer3;
 
-public class MainProgram {
+public class App {
 	public static void main(String[] args) {
 		Point mp = new Point(3, 5);
 
