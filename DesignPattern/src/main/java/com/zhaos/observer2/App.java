@@ -1,7 +1,7 @@
 package com.zhaos.observer2;
 
-public class MainProgram{
-	public  static  void  App(String[] args ){
+public class App{
+	public  static  void  main(String[] args ){
 		Point  mp = new  Point( 3,5);
 		PointListener  plistener1 = new  PointListener(){
 				public void  pointMove( PointEventObject  e )	{
