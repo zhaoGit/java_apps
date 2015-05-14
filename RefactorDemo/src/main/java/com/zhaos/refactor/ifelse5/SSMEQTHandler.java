@@ -14,6 +14,6 @@ public class SSMEQTHandler extends EventHandler{
 	@Override
 	protected void init() {
 		// TODO Auto-generated method stub
-		PerformerHolder.registerPerformer(DocType.SSM, ChangeType.EQT, this);
+		HandlerHolder.registerHandler(DocType.SSM, ChangeType.EQT, this);
 	}
 }

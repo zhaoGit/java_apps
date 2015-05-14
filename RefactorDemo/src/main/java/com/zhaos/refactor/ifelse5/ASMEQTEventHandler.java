@@ -13,6 +13,6 @@ public class ASMEQTEventHandler extends EventHandler{
 	@Override
 	protected void init() {
 		// TODO Auto-generated method stub
-		PerformerHolder.registerPerformer(DocType.ASM, ChangeType.EQT, this);
+		HandlerHolder.registerHandler(DocType.ASM, ChangeType.EQT, this);
 	}
 }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class SimulatePlanGenerator {
 
 	public void generate(Event event){
-		EventHandler handler = PerformerHolder.getPerformer(event.getDocType(), ChangeType.valueOf(event.getChangeType()));
+		EventHandler handler = HandlerHolder.findOneCorrespondingHandlerWithCurrentEvent(event.getDocType(), ChangeType.valueOf(event.getChangeType()));
 		handler.handle(event);
 	}
 }

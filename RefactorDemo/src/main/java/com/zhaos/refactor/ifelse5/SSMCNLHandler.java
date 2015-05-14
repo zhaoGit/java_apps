@@ -13,6 +13,6 @@ public class SSMCNLHandler extends EventHandler{
 	@Override
 	protected void init() {
 		// TODO Auto-generated method stub
-		PerformerHolder.registerPerformer(DocType.SSM, ChangeType.CNL, this);
+		HandlerHolder.registerHandler(DocType.SSM, ChangeType.CNL, this);
 	}
 }

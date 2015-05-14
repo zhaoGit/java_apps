@@ -13,6 +13,6 @@ public class ASMCNLEventHandler extends EventHandler{
 	@Override
 	protected void init() {
 		// TODO Auto-generated method stub
-		PerformerHolder.registerPerformer(DocType.ASM, ChangeType.CNL, this);
+		HandlerHolder.registerHandler(DocType.ASM, ChangeType.CNL, this);
 	}
 }
