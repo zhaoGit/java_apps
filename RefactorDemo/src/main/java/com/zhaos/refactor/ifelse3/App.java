@@ -1,4 +1,4 @@
-package com.zhaos.refactor.ifelse5;
+package com.zhaos.refactor.ifelse3;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
