@@ -14,7 +14,6 @@ public class ASMCNLFactory extends AbstractFactory{
 	}
 	@Override
 	protected void initial() {
-		// TODO Auto-generated method stub
-		HandlerHolder.registerHandler(DocType.ASM, ChangeType.CNL, this);
+		FactoryHolder.registerFactory(DocType.ASM, ChangeType.CNL, this);
 	}
 }
