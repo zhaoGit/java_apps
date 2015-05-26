@@ -2,12 +2,13 @@ package com.zhaos.mvc;
   
 public class BeatController implements ControllerInterface {
 	/*
-	 * 持有Model的引用，当Controller解释GUI的动作之后告知Model做相应的动作进行处理
+	 * 持有Model的引用，当Controller解释GUI的动作之后需要告知Model做相应的动作进行处理
 	 */
 	BeatModelInterface model;
 	
 	/*
-	 * 当Controller从界面View接收
+	 * Controller创建View是一种组合关系。当Controller从界面View接收某一动作，有时也需要告诉View调整其局部状态。例如Controller可以
+	 * 将界面中的某些菜单或按钮置为无效有效状态。
 	 */
 	DJView view;
    

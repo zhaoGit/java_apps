@@ -5,7 +5,16 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class DJView implements ActionListener,  BeatObserver, BPMObserver {
+	/*
+	 * View需要查询Model的状态信息，View直接从模型取得它显示的状态。例如当模型通知视图
+	 * 新歌开始播放，视图像模型询问歌名并显示出来。当控制器请求视图改变时，视图可能也需要
+	 * 向模型询问某些状态。
+	 */
 	BeatModelInterface model;
+	/*
+	 * 当用户对视图做一些动作时，例如点击播放按钮，视图就告诉控制器用户做了什么。控制器会
+	 * 负责处理。
+	 */
 	ControllerInterface controller;
     JFrame viewFrame;
     JPanel viewPanel;
