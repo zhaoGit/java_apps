@@ -1,4 +1,4 @@
-package headfirst.designpatterns.combined.djview;
+package com.zhaos.mvc;
   
 public interface BeatObserver {
 	void updateBeat();

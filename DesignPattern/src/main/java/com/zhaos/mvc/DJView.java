@@ -1,4 +1,4 @@
-package headfirst.designpatterns.combined.djview;
+package com.zhaos.mvc;
     
 import java.awt.*;
 import java.awt.event.*;

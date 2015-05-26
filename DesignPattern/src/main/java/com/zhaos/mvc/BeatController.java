@@ -1,12 +1,13 @@
-package headfirst.designpatterns.combined.djview;
+package com.zhaos.mvc;
   
 public class BeatController implements ControllerInterface {
 	/*
 	 * 持有Model的引用，当Controller解释GUI的动作之后告知Model做相应的动作进行处理
 	 */
 	BeatModelInterface model;
+	
 	/*
-	 * 
+	 * 当Controller从界面View接收
 	 */
 	DJView view;
    
