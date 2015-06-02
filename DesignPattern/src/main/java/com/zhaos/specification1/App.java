@@ -3,7 +3,8 @@ package com.zhaos.specification1;
 import java.util.ArrayList;
 /**
  *    LINQ提供了类似于 SQL 语法的遍历、筛选等功能，能完成对对象的查询，就像
- *    通过SQL语句查询数据库一样我们今天要讲的主题与LINQ有很大关系，它是实现LINQ的核心，是什么呢？
+ *    通过SQL语句查询数据库一样我们今天要讲的主题与LINQ有很大关系，它是实现LINQ的
+ *    核心，是什么呢？
  *    想想SQL语句中什么是最复杂的，是where后面的查询条件，看看自己写的SQL语句
  *    基本上都是一长串的条件判断，中间一堆的and、or、not逻辑符。我们今天的任务
  *    就是要实现条件语句的解析，该部分实现了，基本上LINQ语法已经实现了一大半。
