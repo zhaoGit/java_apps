@@ -9,7 +9,7 @@ public class Reservation {
 	private Calendar date;
 	private BigDecimal price;
 	private ReservationStatus status = ReservationStatus.NEW;
-
+	//
 	public void accept() {
 		setStatus(status.accept(this));
 	}

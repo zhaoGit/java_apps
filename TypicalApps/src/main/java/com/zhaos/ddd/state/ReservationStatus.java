@@ -1,8 +1,11 @@
 package com.zhaos.ddd.state;
 
 public enum ReservationStatus implements ReservationStatusOperations {
-	NEW(new NewRso()), ACCEPTED(new AcceptedRso()), PAID(new PaidRso()), CANCELLED(
-			new CancelledRso());
+	NEW(new NewRso()), 
+	ACCEPTED(new AcceptedRso()), 
+	PAID(new PaidRso()), 
+	CANCELLED(new CancelledRso());
+	
 	private final ReservationStatusOperations operations;
 
 	ReservationStatus(ReservationStatusOperations operations) {
