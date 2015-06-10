@@ -1,5 +1,11 @@
 package com.zhaos.intercepting_filter_pattern;
 
+/**
+ * Filter Manager manages the filters and Filter Chain.
+ * 
+ * @author zhaosheng
+ *
+ */
 public class FilterManager {
 	FilterChain filterChain;
 
