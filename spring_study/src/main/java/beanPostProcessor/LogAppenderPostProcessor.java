@@ -13,7 +13,6 @@ public class LogAppenderPostProcessor implements BeanPostProcessor {
 		
 		Method[] methods = bean.getClass().getDeclaredMethods();
 		for(Method method : methods){
-			//判断方法上是否有RunningLog Annotation
 			if(method.getAnnotation(RunningLog.class) != null){
 				System.out.println("end log");
 			}
