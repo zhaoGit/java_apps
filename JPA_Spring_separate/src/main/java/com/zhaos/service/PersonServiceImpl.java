@@ -21,15 +21,13 @@ public class PersonServiceImpl implements IPersonService {
 	
 	@Override
 	@Transactional
-	public Person createPerson(String name) {
-		// TODO Auto-generated method stub
+	public Person createPerson(String name, String address) {
 		Person p = new Person();
-		
 		p.setId(IDGenerator.getUUID());
 		p.setName(name);
 		p.setAddTime(new Date());
 		User user = new User();
-		user.setAddress("adfafa address");
+		user.setAddress(address);
 		p.setUser(user);
 		return personDAO.savePerson(p);
 	}

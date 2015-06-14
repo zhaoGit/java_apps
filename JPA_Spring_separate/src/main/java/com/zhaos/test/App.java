@@ -17,7 +17,7 @@ public class App {
 				"applicationContext.xml");
 		IPersonService personService = (IPersonService) beanFactory
 				.getBean("personServiceImpl");
-		Person tmPerson = personService.createPerson("Jucy");
+		Person tmPerson = personService.createPerson("Jucy", "xingtai Hebei");
 		Person person = personService.findOnePerson(tmPerson.getId());
 		System.out.println("============================");
 		System.out.println(person.getUser().getAddress());

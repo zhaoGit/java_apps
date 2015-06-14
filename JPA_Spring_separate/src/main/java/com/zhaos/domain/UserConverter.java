@@ -2,7 +2,6 @@ package com.zhaos.domain;
 
 import javax.persistence.AttributeConverter;
 
-//@Convert
 public class UserConverter implements AttributeConverter<User, String>{
 
 	@Override
