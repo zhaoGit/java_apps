@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+		xmlns:util="http://www.springframework.org/schema/util"
+		xsi:schemaLocation=
+			"http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-2.5.xsd
+			http://www.springframework.org/schema/tx 
+       		http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+       		http://www.springframework.org/schema/data/jpa 
+       		http://www.springframework.org/schema/data/jpa/spring-jpa-1.0.xsd
+       		http://www.springframework.org/schema/util
+       	    http://www.springframework.org/schema/util/spring-util.xsd
+       		">
+			
+	<context:component-scan base-package="com.zhaos.service"></context:component-scan>
+	<context:property-placeholder location="classpath*:database.properties" />
+	
+	<jpa:repositories base-package="com.zhaos.dao" entity-manager-factory-ref="entityManagerFactory" transaction-manager-ref="transactionManager"/>
+	<tx:annotation-driven transaction-manager="transactionManager"/> 
+	
+	<bean id="transactionManager"  class="org.springframework.orm.jpa.JpaTransactionManager"> 
+	 	<property name="entityManagerFactory" ref="entityManagerFactory"/> 
+	</bean> 
+	<bean id="entityManagerFactory" class= "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
+		<property name="persistenceProvider">
+			<bean class="org.hibernate.ejb.HibernatePersistence"/>
+		</property>
+		<property name="dataSource" ref="dataSource"></property>
+        <property name="persistenceUnitName" value="SpringDataJpa"/>
+
+<!-- 		<property name="persistenceXmlLocation" value="classpath:/persistence.xml"/> -->
+		
+		<property name="jpaVendorAdapter">
+             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+<!--                 <property name="generateDdl" value="false"/> -->
+<!--                 <property name="showSql" value="true"/> -->
+                <property name="database" value="ORACLE" />
+            </bean>
+        </property>	
+        
+        <property name="packagesToScan">
+            <list>
+                <value>com.zhaos.domain</value>
+            </list>
+        </property>
+        
+<!--         <property name="jpaProperties"> -->
+<!--         	<props> -->
+<!--                 <prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop> -->
+<!--                 <prop key="hibernate.cache.use_second_level_cache">true</prop> -->
+<!--                 <prop key="hibernate.cache.use_query_cache">true</prop> -->
+<!-- 				 <prop key="hibernate.show_sql">false</prop> -->
+<!--                 <prop key="hibernate.format_sql">true</prop> -->
+<!--                 <prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</prop> -->
+<!--                 <prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</prop> -->
+<!--             </props> -->
+<!--         </property> -->
+
+        <property name="jpaPropertyMap" ref="jpaPropertyMap" />
+	 </bean>
+	 
+ 	 <util:map id="jpaPropertyMap">
+			 	<entry key="hibernate.show_sql" value="true" />
+			 	<entry key="hibernate.format_sql" value="true" />
+	 </util:map>
+	 
+	 <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+<!-- 	 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
+	 		<property name="user" value="${database.username}" />
+	 		<property name="password" value="${database.password}" />
+	 		<property name="driverClass" value="${database.driverClassName}" />
+	 		<property name="jdbcUrl" value="${database.url}" />
+	 </bean>
+<!--  <bean id="personServiceImpl" class="com.zhaos.service.PersonServiceImpl"></bean> -->
+</beans>
