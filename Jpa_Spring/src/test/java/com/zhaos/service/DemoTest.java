@@ -32,7 +32,7 @@ public class DemoTest {
 		classEntity.setName("num 1");
 		classEntity.getPersonList().add(person);
 		
-		personService.saveClassEntity(classEntity);
+		assertNotNull(personService.saveClassEntity(classEntity));
 	}
 
 }
