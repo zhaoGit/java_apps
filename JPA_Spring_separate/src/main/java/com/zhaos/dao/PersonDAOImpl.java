@@ -17,20 +17,6 @@ public class PersonDAOImpl implements IPersonDAO {
 	@Override
 	@Transactional
 	public Person savePerson(Person p) {
-//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("leanJPA");
-//		EntityManager em = emf.createEntityManager();
-//		EntityTransaction et = em.getTransaction();
-//		
-//		et.begin();
-		
-//		em.persist(p);
-//		et.commit();
-//		
-//		em.close();
-//		emf.close();
-		
-//		return p;
-		
 		 em.persist(p);
 		 return p;
 	}

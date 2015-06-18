@@ -6,10 +6,9 @@ import com.zhaos.service.PersonServiceImpl;
 public class App {
 
 	/**
-	 * @param args
+	 * 这是一种纯粹的JPA Demo，Hibernate是实现者；没有集成Spring，Sping-data-jpa
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		IPersonService personService = new PersonServiceImpl();
 		personService.createPerson("Lily and lucy");
 	}

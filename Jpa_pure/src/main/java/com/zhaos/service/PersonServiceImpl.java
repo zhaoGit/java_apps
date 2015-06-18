@@ -13,7 +13,6 @@ public class PersonServiceImpl implements IPersonService {
 	
 	@Override
 	public Person createPerson(String name) {
-		// TODO Auto-generated method stub
 		Person p = new Person();
 		
 		p.setId(IDGenerator.getUUID());
@@ -22,5 +21,4 @@ public class PersonServiceImpl implements IPersonService {
 		
 		return personDAO.savePerson(p);
 	}
-
 }
