@@ -2,12 +2,14 @@ package com.zhaos.domain;
 
 import javax.persistence.AttributeConverter;
 
+import com.alibaba.fastjson.JSON;
+
 public class UserConverter implements AttributeConverter<User, String>{
 
 	@Override
 	public String convertToDatabaseColumn(User arg0) {
 		// TODO Auto-generated method stub
-		return arg0.getAddress();
+		return JSON.toJSONString(arg0);
 	}
 
 	@Override
@@ -15,7 +17,7 @@ public class UserConverter implements AttributeConverter<User, String>{
 		// TODO Auto-generated method stub
 		User user = new User();
 		user.setAddress(arg0);
-		return user;
+		return JSON.parseObject(arg0, User.class);
 	}
 
 }

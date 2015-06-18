@@ -35,8 +35,6 @@ public class PersonServiceImpl implements IPersonService {
 	@Override
 	public Person findOnePerson(String id){
 	    return personDAO.findOnePerson(id);
-	    
-	    
 	}
 
 }

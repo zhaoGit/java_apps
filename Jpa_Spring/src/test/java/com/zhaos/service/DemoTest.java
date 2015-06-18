@@ -34,5 +34,4 @@ public class DemoTest {
 		
 		assertNotNull(personService.saveClassEntity(classEntity));
 	}
-
 }
