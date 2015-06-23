@@ -20,7 +20,6 @@ public class PersonServiceImpl implements IPersonService {
 	private IPersonDAO personDAO;
 	
 	@Override
-	@Transactional
 	public Person createPerson(String name, String address) {
 		Person p = new Person();
 		p.setId(IDGenerator.getUUID());

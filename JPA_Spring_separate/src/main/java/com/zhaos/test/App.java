@@ -9,7 +9,8 @@ import com.zhaos.service.IPersonService;
 public class App {
 
 	/**
-	 * @param args
+	 * Spring和JPA分开单独配置，所有和数据库操作有关的都在persistence.xml中；
+	 * Spring不管理JPA的任何类。所有有关数据库的操作都由EntityManager负责。
 	 */
 	public static void main(String[] args) {
 
