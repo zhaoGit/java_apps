@@ -23,6 +23,9 @@ public class PersonDAOImpl implements IPersonDAO {
 	@PersistenceContext
 	private EntityManager em;
 
+	/*
+	 * 事务是由Spring进行管理的，EntityManager只负责增删改查
+	 */
 	@Override
 	@Transactional
 	public Person savePerson(Person p) {
