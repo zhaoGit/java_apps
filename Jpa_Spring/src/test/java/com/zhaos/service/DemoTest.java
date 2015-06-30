@@ -1,6 +1,6 @@
 package com.zhaos.service;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,7 +10,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.zhaos.domain.ClassEntity;
 import com.zhaos.domain.Person;
-import com.zhaos.utilities.IDGenerator;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
@@ -24,11 +23,11 @@ public class DemoTest {
 		Person person = new Person();
 		ClassEntity classEntity = new ClassEntity();
 
-		person.setId(IDGenerator.getUUID());
+//		person.setId(IDGenerator.getUUID());
 		person.setName("aaa");
 		person.setClassEntity(classEntity);
 		
-		classEntity.setGroupId(IDGenerator.getUUID());
+//		classEntity.setGroupId(IDGenerator.getUUID());
 		classEntity.setName("num 1");
 		classEntity.getPersonList().add(person);
 		

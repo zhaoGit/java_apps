@@ -19,5 +19,4 @@ public class UserConverter implements AttributeConverter<User, String>{
 		user.setAddress(arg0);
 		return JSON.parseObject(arg0, User.class);
 	}
-
 }

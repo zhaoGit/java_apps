@@ -10,7 +10,6 @@ import com.zhaos.dao.ClassEntityDAO;
 import com.zhaos.dao.PersonDAO;
 import com.zhaos.domain.ClassEntity;
 import com.zhaos.domain.Person;
-import com.zhaos.utilities.IDGenerator;
 
 @Service("personServiceImpl")
 public class PersonServiceImpl implements IPersonService {
@@ -35,7 +34,6 @@ public class PersonServiceImpl implements IPersonService {
 
 	@Override
 	public ClassEntity saveClassEntity(ClassEntity classEntity) {
-		classEntity.setGroupId(IDGenerator.getUUID());
 		return classEntityDAO.save(classEntity);
 	}
 }

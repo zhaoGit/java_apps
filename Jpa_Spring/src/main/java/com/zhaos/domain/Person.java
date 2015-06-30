@@ -1,12 +1,10 @@
 package com.zhaos.domain;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -14,16 +12,15 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="zhaos_person")
-public class Person implements Serializable {
+public class Person extends MyEntity  {
 	
-	private static final long serialVersionUID = 1L;
-	@Id 
-	@Column(name="id")
-//	@GeneratedValue(generator = "paymentableGenerator")
-//	@GenericGenerator(name = "paymentableGenerator", strategy = "assigned")
-//	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="my_entity_seq_gen")
-//	@SequenceGenerator(name="my_entity_seq_gen", sequenceName="PERSONSEQ",allocationSize=1)
-	private String id;
+//	@Id 
+//	@Column(name="id")
+////	@GeneratedValue(generator = "paymentableGenerator")
+////	@GenericGenerator(name = "paymentableGenerator", strategy = "assigned")
+////	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="my_entity_seq_gen")
+////	@SequenceGenerator(name="my_entity_seq_gen", sequenceName="PERSONSEQ",allocationSize=1)
+//	private String id;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
 	private ClassEntity classEntity;
@@ -40,19 +37,7 @@ public class Person implements Serializable {
 	
 	@Column(name="opcode")
 	private String opcode;
-	
-	/**
-	 * @return the jobtypeid
-	 */
-	public String getId() {
-		return id;
-	}
-	/**
-	 * @param jobtypeid the jobtypeid to set
-	 */
-	public void setId(String id) {
-		this.id = id;
-	}
+
 	/**
 	 * @return the name
 	 */
