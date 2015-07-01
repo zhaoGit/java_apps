@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.zhaos.domain.Address;
 import com.zhaos.domain.ClassEntity;
 import com.zhaos.domain.Person;
 
@@ -22,14 +23,17 @@ public class DemoTest {
 	public void test() {
 		Person person = new Person();
 		ClassEntity classEntity = new ClassEntity();
-
-//		person.setId(IDGenerator.getUUID());
+		
+		classEntity.setName("NO.1");
+		classEntity.getPersonList().add(person);
+		
+		Address address = new Address();
+		address.setState("USA");
+		address.setCity("York");
+		
 		person.setName("aaa");
 		person.setClassEntity(classEntity);
-		
-//		classEntity.setGroupId(IDGenerator.getUUID());
-		classEntity.setName("num 1");
-		classEntity.getPersonList().add(person);
+		person.setAddress(address);
 		
 		assertNotNull(personService.saveClassEntity(classEntity));
 	}

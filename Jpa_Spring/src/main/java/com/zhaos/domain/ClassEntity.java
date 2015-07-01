@@ -13,14 +13,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ZHAOS_CLASSENTITY")
 public class ClassEntity extends MyEntity{
-
-//	@Id
-//	@Column(name="ClazzEnity_ID")
-//	String classEntityId;
 	
 	@Column(name = "groupName")
 	String name;
-
+	/*
+	 * mappedBy指由Person的classEntity字段负责映射外键关系,如果是OneToOne的
+	 * 映射，外键则会建在Person实体对应的表中。
+	 */
 	@OneToMany(mappedBy="classEntity", cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
 	private List<Person> personList = new ArrayList<Person>();
 
