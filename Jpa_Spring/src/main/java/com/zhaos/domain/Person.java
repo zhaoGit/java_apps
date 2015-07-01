@@ -27,6 +27,13 @@ public class Person extends MyEntity  {
 	@Temporal(TemporalType.DATE)
 	private Date addTime = new Date();
 	
+	/*
+	 * The Embedded annotation is used to specify a persistent field or 
+	 * property of an entity .Each of the persistent properties or fields
+		of the embedded object is mapped to the database table for the entity 
+		or embeddable class. The embeddable class must be annotated as 
+		Embeddable
+	 */
 	@Embedded
 	private Address address;
 	
