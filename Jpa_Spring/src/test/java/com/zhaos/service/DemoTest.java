@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.zhaos.domain.Address;
 import com.zhaos.domain.ClassEntity;
+import com.zhaos.domain.IdentityCard;
 import com.zhaos.domain.Person;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -31,9 +32,15 @@ public class DemoTest {
 		address.setState("USA");
 		address.setCity("York");
 		
+		IdentityCard identityCard = new IdentityCard();
+		identityCard.setNumber("411421198811111234");
+		identityCard.setTimeout(10);
+		identityCard.setPerson(person);
+		
 		person.setName("aaa");
 		person.setClassEntity(classEntity);
 		person.setAddress(address);
+		person.setIdentityCard(identityCard);
 		
 		assertNotNull(personService.saveClassEntity(classEntity));
 	}
