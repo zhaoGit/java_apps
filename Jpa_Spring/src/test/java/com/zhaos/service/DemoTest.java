@@ -42,6 +42,7 @@ public class DemoTest {
 		person.setAddress(address);
 		person.setIdentityCard(identityCard);
 		
-		assertNotNull(personService.saveClassEntity(classEntity));
+//		assertNotNull(personService.saveClassEntity(classEntity));
+		assertNotNull(personService.savePerson(person));
 	}
 }
