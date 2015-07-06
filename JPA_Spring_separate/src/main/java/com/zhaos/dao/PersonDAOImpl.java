@@ -11,7 +11,7 @@ import com.zhaos.domain.Person;
 @Repository("personDAO")
 public class PersonDAOImpl implements IPersonDAO {
 	/*
-	 * There are two ways to get an EntityManager.One is with injection and the
+	 * There are two ways to get an EntityManager. One is with injection and the
 	 * other through a factory. The injection option will only work for JEE
 	 * applications, running inside applications servers The EntityManager
 	 * injection, until today, will work only with a server that supports an EJB
